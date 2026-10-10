@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b16">
+<meta name="description" content="Javed Ahmad — AI student building intelligent systems, AI agents and automation solutions.">
+<title>Javed Ahmad | AI Engineer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#090b16; --panel:#111426; --text:#f4f5ff;
+  --muted:#a2a7c1; --purple:#a78bfa; --cyan:#67e8f9;
+  --line:rgba(255,255,255,.10);
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
+body {
+  background:var(--bg); color:var(--text);
+  font-family:"DM Sans",sans-serif; line-height:1.7;
+  overflow-x:hidden;
+}
+body::before {
+  content:""; position:fixed; inset:0; z-index:-1;
+  background:
+    radial-gradient(ellipse at 10% 10%,#4c1d9530,transparent 35%),
+    radial-gradient(ellipse at 90% 45%,#0891b220,transparent 35%);
+  pointer-events:none;
+}
+a { color:inherit; text-decoration:none; }
+button,a { -webkit-tap-highlight-color:transparent; }
+.container { width:min(1100px,90%); margin:auto; }
+nav {
+  position:sticky; top:0; z-index:10;
+  background:#090b16dd; backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner {
+  min-height:72px; display:flex; align-items:center;
+  justify-content:space-between; gap:20px;
+}
+.logo { font:700 21px "Space Grotesk",sans-serif; }
+.logo span { color:var(--purple); }
+.nav-links { display:flex; gap:25px; align-items:center; }
+.nav-links a { color:var(--muted); font-size:13px; }
+.nav-links a:hover { color:var(--cyan); }
+.menu { display:none; background:none; border:1px solid var(--line);
+  color:white; padding:8px 12px; border-radius:8px; cursor:pointer; }
+.hero {
+  min-height:650px; display:grid; align-items:center;
+  grid-template-columns:1.35fr .65fr; gap:50px; padding:90px 0 100px;
+}
+.eyebrow {
+  display:inline-flex; align-items:center; gap:9px;
+  color:var(--cyan); font-size:12px; letter-spacing:2px;
+  text-transform:uppercase; font-weight:700;
+  border:1px solid #67e8f92e; padding:8px 13px;
+  border-radius:100px; background:#67e8f90b;
+}
+.dot { width:7px; height:7px; border-radius:50%;
+  background:#67e8f9; box-shadow:0 0 12px #67e8f9; }
+h1,h2,h3 { font-family:"Space Grotesk",sans-serif; line-height:1.15; }
+h1 { font-size:clamp(44px,7vw,76px); letter-spacing:-3px; margin:25px 0 20px; }
+.gradient {
+  background:linear-gradient(100deg,#c4b5fd,#67e8f9);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.intro { color:var(--muted); max-width:570px; font-size:16px; }
+.actions { display:flex; gap:13px; flex-wrap:wrap; margin-top:30px; }
+.btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:12px 19px; border-radius:10px; font-size:14px;
+  font-weight:700; transition:.25s; border:1px solid var(--line);
+}
+.btn-primary { background:linear-gradient(110deg,#8b5cf6,#6366f1);
+  border:0; box-shadow:0 8px 30px #8b5cf628; }
+.btn:hover { transform:translateY(-3px); }
+.btn-secondary:hover { border-color:var(--cyan); }
+.hero-art { display:grid; place-items:center; position:relative; }
+.orbit {
+  width:min(290px,75vw); aspect-ratio:1; border-radius:50%;
+  border:1px solid #a78bfa48; display:grid; place-items:center;
+  box-shadow:0 0 80px #7c3aed17,inset 0 0 55px #7c3aed13;
+  position:relative;
+}
+.orbit::before,.orbit::after {
+  content:""; position:absolute; border:1px solid #67e8f93b;
+  border-radius:50%; inset:23px;
+}
+.orbit::after { inset:48px; border-color:#a78bfa44; }
+.core {
+  width:120px; height:120px; border-radius:30px;
+  display:grid; place-items:center; font-size:45px;
+  background:linear-gradient(140deg,#7c3aed,#0891b2);
+  box-shadow:0 0 70px #8b5cf653; transform:rotate(-8deg);
+}
+.float-tag {
+  position:absolute; background:#15182a; border:1px solid var(--line);
+  border-radius:10px; padding:9px 13px; font-size:12px;
+  color:var(--muted); box-shadow:0 10px 30px #0005;
+}
+.tag-one { top:18%; right:-5%; }
+.tag-two { bottom:17%; left:-10%; }
+section { padding:85px 0; }
+.section-head { margin-bottom:35px; }
+.kicker { color:var(--cyan); text-transform:uppercase;
+  letter-spacing:2px; font-size:11px; font-weight:700; }
+h2 { font-size:clamp(30px,4vw,43px); margin:9px 0 12px; letter-spacing:-1px; }
+.section-desc { color:var(--muted); max-width:620px; font-size:14px; }
+.about-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:24px; }
+.panel {
+  background:linear-gradient(145deg,#14172a,#0e1020);
+  border:1px solid var(--line); border-radius:18px; padding:28px;
+}
+.panel p { color:var(--muted); font-size:14px; }
+.panel p + p { margin-top:12px; }
+.mini-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.mini {
+  border:1px solid var(--line); border-radius:13px;
+  padding:18px; background:#ffffff04;
+}
+.mini strong { display:block; color:var(--purple); font-size:22px; }
+.mini span { color:var(--muted); font-size:12px; }
+.skills { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+.skill {
+  border:1px solid #a78bfa30; background:#a78bfa0b;
+  border-radius:8px; padding:8px 12px; color:#d8d3ff; font-size:12px;
+}
+.projects { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.project {
+  background:var(--panel); border:1px solid var(--line);
+  border-radius:16px; overflow:hidden; transition:.3s;
+}
+.project:hover { transform:translateY(-6px); border-color:#a78bfa70; }
+.project-visual {
+  min-height:165px; display:grid; place-items:center; font-size:49px;
+  background:radial-gradient(circle at 50% 30%,#8b5cf638,transparent 60%),#15172b;
+  border-bottom:1px solid var(--line);
+}
+.project:nth-child(2) .project-visual {
+  background:radial-gradient(circle at 50% 30%,#0891b238,transparent 60%),#101a29;
+}
+.project:nth-child(3) .project-visual {
+  background:radial-gradient(circle at 50% 30%,#db277738,transparent 60%),#1b1427;
+}
+.project-body { padding:21px; }
+.status {
+  color:var(--cyan); font-size:10px; text-transform:uppercase;
+  letter-spacing:1px; font-weight:700;
+}
+.project h3 { font-size:19px; margin:10px 0; }
+.project p { color:var(--muted); font-size:13px; min-height:88px; }
+.project .skills { margin:17px 0; gap:7px; }
+.project .skill { font-size:10px; padding:5px 8px; }
+.project-link { color:var(--cyan); font-size:12px; font-weight:700; }
+.note { margin-top:22px; color:var(--muted); font-size:12px; }
+.journey { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.journey-card { border-left:2px solid #8b5cf6; padding:8px 0 8px 18px; }
+.journey-card h3 { font-size:17px; margin:10px 0; }
+.journey-card p { font-size:13px; color:var(--muted); }
+.contact-box {
+  padding:45px 25px; text-align:center; border:1px solid #a78bfa36;
+  background:radial-gradient(ellipse at 50% 0%,#7c3aed24,transparent 70%),#111426;
+  border-radius:22px;
+}
+.contact-box p { color:var(--muted); max-width:520px; margin:12px auto 0; font-size:14px; }
+.contact-box .actions { justify-content:center; }
+footer { border-top:1px solid var(--line); padding:25px 0; color:var(--muted); font-size:12px; }
+.footer-inner { display:flex; justify-content:space-between; gap:15px; flex-wrap:wrap; }
+.reveal { opacity:0; transform:translateY(18px); transition:opacity .6s,transform .6s; }
+.reveal.visible { opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; }
+  .reveal { opacity:1; transform:none; }
+}
+@media(max-width:800px) {
+  .hero { grid-template-columns:1fr; padding:70px 0; gap:55px; }
+  .hero-art { min-height:280px; }
+  .about-grid { grid-template-columns:1fr; }
+  .projects { grid-template-columns:1fr 1fr; }
+  .journey { grid-template-columns:1fr; }
+}
+@media(max-width:560px) {
+  .menu { display:block; }
+  .nav-links { display:none; position:absolute; top:72px; left:0; right:0;
+    padding:22px 5%; background:#0c0e1c; border-bottom:1px solid var(--line);
+    flex-direction:column; align-items:flex-start; gap:17px; }
+  .nav-links.open { display:flex; }
+  h1 { letter-spacing:-2px; }
+  section { padding:65px 0; }
+  .projects { grid-template-columns:1fr; }
+  .project p { min-height:0; }
+  .tag-one { right:-2%; }
+  .tag-two { left:-3%; }
+  .panel { padding:22px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">Javed<span>.</span></a>
+    <button class="menu" id="menu" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+    <div class="nav-links" id="navlinks">
+      <a href="#about">About</a><a href="#skills">Skills</a>
+      <a href="#projects">Projects</a><a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="container hero" id="home">
+  <div class="reveal">
+    <div class="eyebrow"><span class="dot"></span> Building with intelligence</div>
+    <h1>Hi, I'm Javed.<br><span class="gradient">I build with AI.</span></h1>
+    <p class="intro">I'm a BS Artificial Intelligence student exploring intelligent agents, AI-powered applications, and automation systems that solve real-world problems.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#projects">Explore my work ↗</a>
+      <a class="btn btn-secondary" href="#contact">Let's connect</a>
+    </div>
+  </div>
+  <div class="hero-art reveal" aria-label="Abstract AI-inspired graphic">
+    <div class="orbit">
+      <div class="core">✳</div>
+      <span class="float-tag tag-one">AI &amp; Agents ✦</span>
+      <span class="float-tag tag-two">Ideas → Systems</span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">A little about me</div>
+      <h2>Curious mind. <span class="gradient">Builder's mindset.</span></h2>
+      <p class="section-desc">I want to turn what I learn into useful technology.</p>
+    </div>
+    <div class="about-grid">
+      <div class="panel reveal">
+        <p>I'm studying Artificial Intelligence and developing my skills in programming, problem-solving, and intelligent systems.</p>
+        <p>I'm especially interested in AI agents, workflow automation, and designing software that makes everyday tasks easier.</p>
+        <p>My goal is to keep learning by building practical projects, documenting what works, and improving through experimentation.</p>
+      </div>
+      <div class="mini-grid reveal">
+        <div class="mini"><strong>AI</strong><span>My field of study</span></div>
+        <div class="mini"><strong>Build</strong><span>Learn through projects</span></div>
+        <div class="mini"><strong>Explore</strong><span>New tools and ideas</span></div>
+        <div class="mini"><strong>Improve</strong><span>One project at a time</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">My toolkit</div>
+      <h2>Skills I'm <span class="gradient">developing.</span></h2>
+      <p class="section-desc">A growing toolkit for building useful software and AI solutions.</p>
+    </div>
+    <div class="panel reveal">
+      <h3>Programming &amp; foundations</h3>
+      <div class="skills">
+        <span class="skill">Python</span><span class="skill">C++</span>
+        <span class="skill">Data Structures</span><span class="skill">Probability &amp; Statistics</span>
+        <span class="skill">AI Fundamentals</span>
+      </div>
+      <h3 style="margin-top:25px">AI &amp; development tools</h3>
+      <div class="skills">
+        <span class="skill">AI Agents</span><span class="skill">n8n Automation</span>
+        <span class="skill">APIs &amp; Webhooks</span><span class="skill">Git &amp; GitHub</span>
+        <span class="skill">HTML &amp; CSS</span><span class="skill">LLM Applications</span>
+      </div>
+      <p class="note">Please edit this list to reflect your actual experience. Learning a tool is not the same as mastering it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Selected work</div>
+      <h2>Ideas into <span class="gradient">projects.</span></h2>
+      <p class="section-desc">Practical concepts I'm exploring at the intersection of AI, automation, and software.</p>
+    </div>
+    <div class="projects">
+      <article class="project reveal">
+        <div class="project-visual">◈</div>
+        <div class="project-body">
+          <div class="status">Concept / In progress</div>
+          <h3>AI Booking Agent</h3>
+          <p>A conversational assistant concept for collecting appointment details, checking calendar availability, and preventing booking conflicts.</p>
+          <div class="skills"><span class="skill">n8n</span><span class="skill">LLMs</span><span class="skill">Calendar API</span></div>
+          <a class="project-link" href="#contact">Project details coming soon ↗</a>
+        </div>
+      </article>
+      <article class="project reveal">
+        <div class="project-visual">⌘</div>
+        <div class="project-body">
+          <div class="status">Concept / In progress</div>
+          <h3>AI Study Assistant</h3>
+          <p>A learning assistant concept designed to help students ask questions about lecture notes and find relevant study material.</p>
+          <div class="skills"><span class="skill">Python</span><span class="skill">LLMs</span><span class="skill">RAG</span></div>
+          <a class="project-link" href="#contact">Project details coming soon ↗</a>
+        </div>
+      </article>
+      <article class="project reveal">
+        <div class="project-visual">⟡</div>
+        <div class="project-body">
+          <div class="status">Concept / In progress</div>
+          <h3>Workflow Automation</h3>
+          <p>A business workflow concept for classifying incoming enquiries, drafting responses, and routing requests to the right person.</p>
+          <div class="skills"><span class="skill">Automation</span><span class="skill">APIs</span><span class="skill">AI</span></div>
+          <a class="project-link" href="#contact">Project details coming soon ↗</a>
+        </div>
+      </article>
+    </div>
+    <p class="note">These cards describe project concepts, not claims of completed software. Update each card with a real demo, repository, and results when available.</p>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">The bigger picture</div>
+      <h2>My learning <span class="gradient">journey.</span></h2>
+    </div>
+    <div class="journey">
+      <div class="journey-card reveal">
+        <div class="kicker">01 / Foundations</div>
+        <h3>Understand the fundamentals</h3>
+        <p>Build a strong base in programming, algorithms, mathematics, probability, and AI concepts.</p>
+      </div>
+      <div class="journey-card reveal">
+        <div class="kicker">02 / Experiment</div>
+        <h3>Build practical systems</h3>
+        <p>Explore APIs, automation, AI tools, and agent workflows through small, testable projects.</p>
+      </div>
+      <div class="journey-card reveal">
+        <div class="kicker">03 / Create impact</div>
+        <h3>Solve meaningful problems</h3>
+        <p>Develop reliable solutions for real users and learn to evaluate their value and limitations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box reveal">
+      <div class="kicker">Have an idea?</div>
+      <h2>Let's build something <span class="gradient">meaningful.</span></h2>
+      <p>I'm interested in learning, collaborating, and exploring ideas around AI and automation. Feel free to connect with me.</p>
+      <div class="actions">
+        <!-- Replace these example links with your real profiles. -->
+        <a class="btn btn-primary" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a class="btn btn-secondary" href="mailto:YOUR_EMAIL@example.com">Email me ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Javed Ahmad · Built with curiosity.</span>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
+<script>
+const menu = document.getElementById("menu");
+const navlinks = document.getElementById("navlinks");
+menu.addEventListener("click", () => {
+  const open = navlinks.classList.toggle("open");
+  menu.setAttribute("aria-expanded", String(open));
+});
+navlinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navlinks.classList.remove("open");
+    menu.setAttribute("aria-expanded", "false");
+  });
+});
+document.getElementById("year").textContent = new Date().getFullYear();
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.12});
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+}
+</script>
+</body>
+</html>
